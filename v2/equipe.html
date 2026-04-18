@@ -4,10 +4,73 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>L'Équipe — Võ Thuật Es Vitry</title>
-<meta name="description" content="Rencontrez l'équipe du Võ Thuật Es Vitry : Daniel, Zair, Tamara, Matteo Padovani et les aides entraîneurs.">
+<meta name="description" content="Rencontrez l'équipe du Võ Thuật Es Vitry : Daniel, Zair, Tamara, Matteo et les membres du bureau.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥊</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+/* Mise en avant légère Daniel & Zair */
+.team-card.senior {
+  border-left-color: var(--gold);
+  background: var(--bg3);
+}
+.team-card.senior:hover { background: var(--bg4); }
+.team-card.senior .team-name { color: var(--gold-light); }
+
+.team-badge {
+  display: inline-block; font-size: .52rem; font-weight: 700;
+  letter-spacing: .2em; text-transform: uppercase;
+  padding: 3px 8px; margin-bottom: 10px;
+  border: 1px solid var(--gold-dim); color: var(--gold-dim);
+}
+.team-card.senior .team-badge {
+  border-color: var(--gold); color: var(--gold);
+}
+
+/* Section bureau */
+.bureau-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--border); margin-top: 32px;
+}
+.bureau-card {
+  background: var(--bg3); padding: 24px 28px;
+  border-left: 2px solid var(--gold-dim);
+  transition: background .2s, border-left-color .2s;
+}
+.bureau-card:hover { background: var(--bg4); border-left-color: var(--gold); }
+.bureau-name {
+  font-family: 'Cinzel', serif; font-size: .88rem;
+  font-weight: 700; letter-spacing: .1em; color: var(--gold);
+  margin-bottom: 4px;
+}
+.bureau-role { font-size: .7rem; font-style: italic; color: var(--text-dim); margin-bottom: 10px; }
+.bureau-note { font-size: .78rem; color: rgba(232,224,208,.7); line-height: 1.6; }
+
+/* Diplomes inline dans la card */
+.card-diplomes {
+  margin-top: 16px; padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.card-diplome-item {
+  font-size: .75rem; color: rgba(232,224,208,.7);
+  padding: 5px 0; border-bottom: 1px solid rgba(201,168,76,.06);
+  display: flex; align-items: center; gap: 8px;
+}
+.card-diplome-item:last-child { border-bottom: none; }
+.card-diplome-item span { color: var(--red-light); flex-shrink: 0; }
+
+/* Séparateur de section */
+.section-separator {
+  display: flex; align-items: center; gap: 16px;
+  margin: 56px 0 40px;
+}
+.section-separator-line { flex: 1; height: 1px; background: var(--border); }
+.section-separator-label {
+  font-family: 'Cinzel', serif; font-size: .6rem; font-weight: 700;
+  letter-spacing: .3em; text-transform: uppercase; color: var(--gold-dim);
+  white-space: nowrap;
+}
+</style>
 </head>
 <body>
 
@@ -31,106 +94,91 @@
 <div class="wrap">
   <div class="page-head" data-bg="ÉQUIPE">
     <h1 class="fade-up">L'Équipe</h1>
-    <p class="fade-up" style="animation-delay:.1s">Des enseignants passionnés, expérimentés et engagés</p>
+    <p class="fade-up" style="animation-delay:.1s">Des passionnés au service du combat et de la transmission</p>
   </div>
 </div>
 
-<!-- ══ COACHES ══ -->
+<!-- ══ LES 4 ENTRAÎNEURS ══ -->
 <div class="wrap">
   <section class="section">
-    <p class="eyebrow">Les entraîneurs</p>
-    <h2 class="title">Ceux qui forgent les combattants</h2>
+    <p class="eyebrow">Entraîneurs</p>
+    <h2 class="title">Les entraîneurs principaux</h2>
+    <p class="body-text">Chacun apporte son expertise, sa discipline et ses années d'expérience pour former des combattants complets, du plus jeune au plus confirmé.</p>
 
-    <div class="team-grid">
+    <div class="team-grid" style="margin-top:36px;">
 
-      <div class="team-card">
+      <!-- Daniel — Senior -->
+      <div class="team-card senior">
+        <div class="team-badge">Fondateur · Direction technique</div>
         <div class="team-name">Daniel</div>
         <div class="team-role">Maître & Fondateur</div>
-        <p class="team-bio">Fondateur du Võ Thuật dans plusieurs villes en France. Maître de l'art martial traditionnel vietnamien, il est le formateur de Jean-François Lenogue et de nombreux autres champions passés par notre club. Il encadre et forme des combattants depuis plus de <strong style="color:var(--gold-light)">50 ans</strong>.</p>
+        <p class="team-bio">Fondateur du Võ Thuật dans plusieurs villes en France. Maître de l'art martial traditionnel vietnamien depuis plus de <strong style="color:var(--gold-light)">50 ans</strong>, il est le formateur de Jean-François Lenogue et de nombreux autres champions. La référence absolue du club.</p>
       </div>
 
-      <div class="team-card">
+      <!-- Zair — Senior -->
+      <div class="team-card senior">
+        <div class="team-badge">Président · Direction</div>
         <div class="team-name">Zair</div>
         <div class="team-role">Président & Entraîneur Võ Thuật</div>
-        <p class="team-bio">Maître et expert en Võ Thuật, avec une énorme expérience complémentaire en boxe thaï et karaté. Des années d'enseignement qui forgent une base redoutable pour le MMA de nos combattants. Partenaire d'entraînement de Jeff Lenogue.</p>
+        <p class="team-bio">Maître et expert en Võ Thuật, avec une solide expérience complémentaire en boxe thaï et karaté. Partenaire d'entraînement de Jeff Lenogue, il apporte une base technique redoutable pour le MMA de nos combattants.</p>
       </div>
 
+      <!-- Tamara -->
       <div class="team-card">
+        <div class="team-badge">Entraîneur</div>
         <div class="team-name">Tamara</div>
-        <div class="team-role">L'art du combat pour tous</div>
-        <p class="team-bio">Une patience remarquable et des cours extrêmement complets. Elle s'occupe des enfants et ados avec un talent particulier, alliant rigueur technique et bienveillance. Un pilier du club, présente sur les cours du lundi, vendredi et samedi.</p>
+        <div class="team-role">Entraîneur Võ Thuật</div>
+        <p class="team-bio">Une patience remarquable et des cours extrêmement complets. Elle s'occupe des enfants et ados avec un talent particulier, alliant rigueur technique et bienveillance. Un pilier incontournable du club.</p>
       </div>
 
+      <!-- Matteo -->
       <div class="team-card mma-card">
+        <div class="team-badge" style="border-color:rgba(192,57,43,.4);color:var(--red-light)">Entraîneur MMA · BF1 + BF2</div>
         <div class="team-name">Matteo Padovani</div>
         <div class="team-role">Entraîneur & Athlète MMA</div>
-        <p class="team-bio">Diplômé fédéral FMMAF (BF1 + BF2). <strong style="color:var(--red-light)">Médaillé d'or</strong> — Étape MMA League. Spécialiste lutte et combat au sol. Entraîneur et compétiteur actif, il représente la nouvelle génération du club.</p>
+        <p class="team-bio">Diplômé fédéral FMMAF (BF1 + BF2). Spécialiste lutte et combat au sol. Entraîneur et compétiteur actif, il représente la nouvelle génération du club.</p>
+        <div class="card-diplomes">
+          <div class="card-diplome-item"><span>🥇</span> Médaillé d'or — Étape MMA League (FMMAF)</div>
+          <div class="card-diplome-item"><span>✓</span> Brevet Fédéral 1<sup>er</sup> & 2<sup>e</sup> Degré FMMAF — Oct. 2025</div>
+        </div>
       </div>
 
-    </div>
-
-    <div class="team-assistants">
-      <span class="label">Aides entraîneurs</span>
-      <span class="names"><strong>Lorenzo</strong> · <strong>Inès</strong> · <strong>Madjid</strong> — certains diplômés FMMAF</span>
     </div>
   </section>
 </div>
 
-<!-- ══ MATTEO SPOTLIGHT ══ -->
+<!-- ══ MEMBRES DU BUREAU & AIDES ENTRAÎNEURS ══ -->
 <div class="wrap">
   <section class="section">
-    <p class="eyebrow red">Focus</p>
-    <h2 class="title">Matteo Padovani</h2>
-    <p class="body-text">Entraîneur diplômé et compétiteur actif, Matteo incarne la nouvelle génération du Võ Thuật Es Vitry — celle qui unit les racines vietnamiennes et le MMA moderne.</p>
+    <p class="eyebrow">Organisation</p>
+    <h2 class="title">Membres du bureau & Aides entraîneurs</h2>
+    <p class="body-text">Le club s'appuie sur des membres investis qui assurent à la fois le fonctionnement associatif et le soutien pédagogique sur les tatamis.</p>
 
-    <div class="spotlight">
-      <div class="spotlight-img">
-        <!--
-          PHOTO : Remplacer ce bloc par :
-          <img src="images/matteo.jpg" alt="Matteo Padovani avec sa médaille d'or FMMAF">
-        -->
-        <div class="photo-placeholder">
-          <div style="font-size:1rem;color:var(--text-dim);letter-spacing:.1em;text-transform:uppercase;font-family:'Cinzel',serif;">Photo<br>Matteo</div>
-        </div>
+    <div class="bureau-grid">
+
+      <div class="bureau-card">
+        <div class="bureau-name">Lorenzo</div>
+        <div class="bureau-role">Membre du bureau · Aide entraîneur</div>
+        <p class="bureau-note">Impliqué dans la vie du club, il soutient l'encadrement des séances et le bon fonctionnement de l'association.</p>
       </div>
-      <div class="spotlight-content">
-        <span class="spot-badge">Entraîneur & Athlète MMA</span>
 
-        <p class="eyebrow red" style="margin-bottom:18px;">Diplômes FMMAF</p>
-        <div class="diplome-list">
-          <div class="diplome-row">
-            <div class="diplome-title">Brevet Fédéral 1<sup>er</sup> Degré</div>
-            <div class="diplome-sub">Assistant Moniteur de MMA — Octobre 2025</div>
-          </div>
-          <div class="diplome-row">
-            <div class="diplome-title">Brevet Fédéral 2<sup>e</sup> Degré</div>
-            <div class="diplome-sub">Initiateur de MMA — Octobre 2025</div>
-          </div>
-        </div>
-
-        <p class="eyebrow red" style="margin-top:28px;margin-bottom:14px;">Palmarès</p>
-        <div class="diplome-list">
-          <div class="palmares-item">
-            <span class="palmares-medal" aria-hidden="true">🥇</span>
-            <span>Médaillé d'or — Étape MMA League (FMMAF)</span>
-          </div>
-        </div>
-
-        <p class="eyebrow" style="margin-top:28px;margin-bottom:14px;">Spécialités</p>
-        <div class="disc-compare" style="margin-top:0;">
-          <div class="disc-col" style="border-top:1px solid var(--border);padding:20px;">
-            <div class="disc-item">Lutte</div>
-            <div class="disc-item">Combat au sol</div>
-            <div class="disc-item">Soumissions</div>
-          </div>
-          <div class="disc-col" style="border-top:1px solid var(--border);padding:20px;">
-            <div class="disc-item">MMA complet</div>
-            <div class="disc-item">Jeunes (U14+)</div>
-            <div class="disc-item">Adultes</div>
-          </div>
-        </div>
+      <div class="bureau-card">
+        <div class="bureau-name">Inès</div>
+        <div class="bureau-role">Membre du bureau · Aide entraîneur</div>
+        <p class="bureau-note">Active au sein du bureau associatif et présente sur les cours pour épauler l'équipe d'entraîneurs.</p>
       </div>
+
+      <div class="bureau-card">
+        <div class="bureau-name">Madjid</div>
+        <div class="bureau-role">Membre du bureau · Aide entraîneur</div>
+        <p class="bureau-note">Membre engagé, il contribue à la gestion de l'association et au soutien technique lors des entraînements.</p>
+      </div>
+
     </div>
+
+    <p style="font-size:.72rem;color:var(--text-dim);margin-top:20px;font-style:italic;">
+      Certains aides entraîneurs sont diplômés FMMAF.
+    </p>
   </section>
 </div>
 
@@ -138,7 +186,7 @@
 <div class="wrap" style="padding-bottom:80px;">
   <div class="cta-banner">
     <div>
-      <div class="cta-banner-title">Envie de rejoindre l'équipe ?</div>
+      <div class="cta-banner-title">Envie de nous rejoindre ?</div>
       <div class="cta-banner-sub">Premier cours offert · Tous niveaux · Dès 6 ans</div>
     </div>
     <a href="contact.html" class="btn btn-gold">Nous contacter</a>
